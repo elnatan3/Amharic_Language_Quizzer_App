@@ -34,7 +34,7 @@ class AmharicLanguageLearningApp(QMainWindow):
         self.correct_answer_label.setStyleSheet("font-size: 20px;")
 
         self.questions = ["What is the Amharic word for 'hello'?", "What is the Amharic word for 'bye'?", "What is the Amharic word for 'thank you'?", "What is the Amharic word for 'please'?", "What is the Amharic word for 'yes'?", "What is the Amharic word for 'no'?"]
-        self.answers = ["selam", "chaw", "ameseginalehu", "i'bakwon", "eshi", "embi"]
+        self.answers = ["selam", "dehna yihunu", "ameseginalehu", "i'bakwon", "eshi", "embi"]
         self.images = ["hello.png", "goodbye.png", "thankyou.png", "please.png", "yes.png", "no.png"]
         self.current_question_index = 0
         self.correct_answers = 0
