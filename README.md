@@ -17,6 +17,7 @@ When you run the application, a window will open with the first question and an 
 3. Progress bar to track the user's progress
 4. Displays the correct answer for incorrect responses
 5. Message box to display final score
+6. Image display for wrong question
 # Contribution
 This application is open-source, and contributions are welcome. If you want to contribute to the application, please fork the repository, make your changes, and submit a pull request. If you encounter any issues or have any suggestions, please open an issue in the repository.
 
