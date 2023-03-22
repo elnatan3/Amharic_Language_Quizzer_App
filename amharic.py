@@ -34,10 +34,10 @@ class AmharicLanguageLearningApp(QMainWindow):
         self.correct_answer_label.setStyleSheet("font-size: 20px;")
 
         self.questions = ["What is the Amharic word for 'hello'?", "What is the Amharic word for 'bye'?", "What is the Amharic word for 'thank you'?", "What is the Amharic word for 'please'?", "What is the Amharic word for 'yes'?", "What is the Amharic word for 'no'?"]
-        self.answers = ["selam", "chaw", "ameseginalehu", "minim aleh", "eshi", "embi"]
+        self.answers = ["selam", "chaw", "ameseginalehu", "i'bakwon", "eshi", "embi"]
         self.images = ["hello.png", "goodbye.png", "thankyou.png", "please.png", "yes.png", "no.png"]
         self.current_question_index = 0
-        
+        self.correct_answers = 0
         self.question_label.setText(self.questions[self.current_question_index])
         self.submit_button.clicked.connect(self.submit_answer)
         self.progress_bar.setRange(0, len(self.questions))
@@ -50,7 +50,6 @@ class AmharicLanguageLearningApp(QMainWindow):
         self.vbox_layout.addWidget(self.image_label)
         self.hbox_layout.addLayout(self.vbox_layout)
         self.central_widget.setLayout(self.hbox_layout)
-        
         self.show()
         
     def submit_answer(self):
@@ -59,23 +58,20 @@ class AmharicLanguageLearningApp(QMainWindow):
         if answer == self.answers[self.current_question_index]:
             self.feedback_label.setText("Correct!")
             self.feedback_label.setStyleSheet("color: green")
-            self.progress_bar.setValue(self.current_question_index + 1)
-            self.image_label.setPixmap(QPixmap(self.images[self.current_question_index]))
+            self.correct_answers += 1
         else:
             self.feedback_label.setText("Incorrect.")
             self.feedback_label.setStyleSheet("color: red; background-color: lightyellow; font-weight: bold; padding: 5px;")
             self.correct_answer_label.setText("Correct answer: " + self.answers[self.current_question_index])
-            self.image_label.clear()
-        
+            self.image_label.setPixmap(QPixmap(self.images[self.current_question_index]))
+        self.progress_bar.setValue(self.current_question_index + 1)
         # Go to the next question or end the quiz
-        self.current_question_index += 1
-        if self.current_question_index < len(self.questions):
+        if self.current_question_index < len(self.questions) - 1:
+            self.current_question_index += 1
             self.question_label.setText(self.questions[self.current_question_index])
             self.answer_field.setText("")
         else:
-            score = self.progress_bar.value()
-            if score < 0:
-                score = 0
+            score = self.correct_answers
             total_questions = len(self.questions)
             score_percent = (score / total_questions) * 100
             score_message = f"Score: {score}/{total_questions} ({score_percent:.1f}%)"
