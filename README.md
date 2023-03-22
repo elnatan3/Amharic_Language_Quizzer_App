@@ -12,12 +12,11 @@ Once you have installed Python and PyQt5, you can run the application by executi
 When you run the application, a window will open with the first question and an input field for your answer. Type your answer in the input field and click the "Submit" button. If your answer is correct, the feedback label will display "Correct!" in green, and the progress bar will increase by one. If your answer is incorrect, the feedback label will display "Incorrect." in red, and the correct answer will be displayed in the correct answer label. The quiz will continue with the next question until all questions have been answered. Once the quiz is completed, a message box will appear with your score and the option to close the application.
 
 # Features
-Simple and user-friendly interface
-Immediate feedback on answers
-Progress bar to track the user's progress
-Displays the correct answer for incorrect responses
-Image display for each question
-Message box to display final score
+1. Simple and user-friendly interface
+2. Immediate feedback on answers
+3. Progress bar to track the user's progress
+4. Displays the correct answer for incorrect responses
+5. Message box to display final score
 # Contribution
 This application is open-source, and contributions are welcome. If you want to contribute to the application, please fork the repository, make your changes, and submit a pull request. If you encounter any issues or have any suggestions, please open an issue in the repository.
 
